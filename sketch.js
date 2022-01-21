@@ -11,7 +11,20 @@ function draw() {
 	text('6', 0, 285)
 	text('9', -270, 13)
 	textAlign(CENTER);
-	text(hour() + ':' + minute() + ':' + second(), 0, 350)
+	let hr = hour()
+	if (hr < 10) {
+		hr = str('0' + hour());
+	}
+	let mn = minute()
+	if (mn < 10) {
+		mn = str('0' + minute());
+	}
+	let sc = second()
+	if (sc < 10) {
+		sc = str('0' + second());
+	}
+
+	text( hr + ':' + mn + ':' + sc, 0, 350)
 	push();
 	stroke('purple');
 	strokeWeight(10);
